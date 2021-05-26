@@ -14,3 +14,8 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.blue_bg{
+  background-color: #a3cbff !important;
+  transition: 1s ease;
+}

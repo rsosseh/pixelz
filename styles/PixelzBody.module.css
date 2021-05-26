@@ -1,0 +1,93 @@
+.body__container{
+    background-color: #fedbff;
+    transition: 1s ease;
+}
+.body__header{
+    height: 95vh;
+}
+.body__title{
+    font-family: 'Playfair Display', serif;
+    font-size: 80px;
+    width: 500px;
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    font-style: italic;
+    color: white;
+    z-index: 1;
+}
+.body__title_span{
+    background-color: #0000004d;
+}
+.body__sprite_1{
+    position: absolute;
+    width: 200px;
+    left: 10%;
+    top: 15%;
+}
+.body__sprite_2{
+    position: absolute;
+    width: 300px;
+    left: 30%;
+    bottom: 10%;
+}
+.body__sprite_3{
+    position: absolute;
+    width: 400px;
+    right: 10%;
+    top: 50%;
+}
+.body__ticker{
+    font-size: 90px;
+}
+.body__body{
+    height: 100vh;
+    position: relative;
+}
+.body__paragraph{
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 600px;
+    font-size: 48px;
+    z-index: 1;
+}
+.body__paragraph_span{
+    background: white;
+}
+.body__body_image{
+    position: absolute;
+    right: 10%;
+    top: 20%;
+}
+@media(max-width: 768px){
+    .body__title{
+        font-size: 50px;
+        width: 300px;
+        text-align: right;
+    }
+    .body__sprite_1{
+        width: 130px;
+        top: 5%;
+    }
+    .body__sprite_2{
+        width: 170px;
+        right: 10%;
+        left: initial;
+        bottom: 20%;
+    }
+    .body__sprite_3{
+        width: 350px;
+        left: -10%;
+        right: initial;
+    }
+    .body__paragraph{
+        width: 300px;
+        font-size: 32px;
+    }
+    .body__body_image{
+        right: -10%;
+        top: 30%;
+        width: 500px;
+    }
+}
