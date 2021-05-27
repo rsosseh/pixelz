@@ -1,6 +1,8 @@
 .body__container{
     background-color: #fedbff;
     transition: 1s ease;
+    width: 100%;
+    overflow: hidden;
 }
 .body__header{
     height: 95vh;
