@@ -1,26 +1,18 @@
 import Head from 'next/head';
 import PixelzBody from '../components/PixelzBody';
 import React from 'react';
+import axios from 'axios';
 
 class Home extends React.Component{
-  static defaultProps = {
-    "body_image": "/wolf-rida.png",
-    "title": "I like messing around with pixelz",
-    "sprite_2": "/npc_mel-copy.png",
-    "sprite_3": "/ice-man-trans.gif",
-    "sprite_1": "/mc-copy.png",
-    "desc": "when there's nothing better to do, i love spending time making little creations like this guy over here."
-  }
   static async getInitialProps(ctx) {
-    const res = await fetch('https://m4dv5tc2t8.execute-api.us-east-1.amazonaws.com/Prod/helloWorld')
-    const json = await res.json()
+    const res = await axios.get('https://m4dv5tc2t8.execute-api.us-east-1.amazonaws.com/Prod/helloWorld')
     return { 
-            title: json.title, 
-            desc: json.desc,
-            sprite_1: json.sprite_1,
-            sprite_2: json.sprite_2,
-            sprite_3: json.sprite_3,
-            body_image: json.body_image
+            title: res.data.title, 
+            desc: res.data.desc,
+            sprite_1: res.data.sprite_1,
+            sprite_2: res.data.sprite_2,
+            sprite_3: res.data.sprite_3,
+            body_image: res.data.body_image
           }
   }
   render(){
