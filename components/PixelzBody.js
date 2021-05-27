@@ -5,11 +5,10 @@ import Ticker from 'react-ticker';
 class PixelzBody extends React.Component{
     constructor(props){
         super(props);
-
         this.body = React.createRef();
     }
     componentDidMount(){
-        window.addEventListener("scroll", this.colorScroller)
+        window.addEventListener("scroll", this.colorScroller);
     }
     colorScroller = () => {
         if(window.pageYOffset > (window.innerHeight / 2)){
@@ -19,18 +18,19 @@ class PixelzBody extends React.Component{
         }
     }
     render(){
+        const { title, desc, sprite_1, sprite_2, sprite_3, body_image } = this.props;
         return(
             <div className={styles.body__container} ref={this.body}>
                 <div className={styles.body__header}>
                     <div className={styles.body__title}>
                         <span className={styles.body__title_span}>
-                            &nbsp;I like&nbsp; &nbsp;messing&nbsp; &nbsp;around with&nbsp; &nbsp;pixelz : ]&nbsp;&nbsp;
+                            {`${title} : ]`}
                         </span>
                     </div>
                     <div className="body__sprite-container">
-                        <img className={[styles.body__sprite_1]} src="/mc-copy.png" />
-                        <img className={[styles.body__sprite_2]} src="/npc_mel-copy.png" />
-                        <img className={[styles.body__sprite_3]} src="/ice-man-trans.gif" />
+                        <img className={[styles.body__sprite_1]} src={sprite_1} />
+                        <img className={[styles.body__sprite_2]} src={sprite_2} />
+                        <img className={[styles.body__sprite_3]} src={sprite_3} />
                     </div>
                 </div>
                 <Ticker speed={2}>
@@ -43,11 +43,10 @@ class PixelzBody extends React.Component{
                 <div className={styles.body__body}>
                     <div className={styles.body__paragraph}>
                         <span className={styles.body__paragraph_span}>
-                            when there's nothing better to do, i love spending time making little
-                            creations like this guy over here. 🐺
+                            {`${desc} 🐺`}
                         </span>
                     </div>
-                    <img className={styles.body__body_image} src="/wolf-rida.png" />
+                    <img className={styles.body__body_image} src={body_image} />
                 </div>
             </div>
         )
