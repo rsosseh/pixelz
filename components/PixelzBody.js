@@ -11,7 +11,7 @@ class PixelzBody extends React.Component{
         window.addEventListener("scroll", this.colorScroller);
     }
     colorScroller = () => {
-        if(window.pageYOffset > (window.innerHeight / 2)){
+        if(window.pageYOffset > 200){
             this.body.current.classList.add('blue_bg');
         } else {
             this.body.current.classList.remove('blue_bg');
